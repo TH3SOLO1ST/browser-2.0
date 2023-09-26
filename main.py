@@ -33,7 +33,7 @@ class MainWindow(QMainWindow):
         navbar.addAction(home_btn)
 
         self.url_bar = QLineEdit()
-        self.url_bar.returnpressed.connect(self.navigate_to_url)
+        self.url_bar.returnPressed.connect(self.navigate_to_url)
         navbar.addWidget(self.url_bar)
         self.browser.urlChanged.connect(self.update_url)
 
@@ -48,7 +48,7 @@ class MainWindow(QMainWindow):
         self.url_bar.setText(q.toString())
 
 
-app = QAction(sys.argv)
+app = QApplication(sys.argv)
 QApplication.setApplicationName('Browser by TH3SOLO1ST')
 window = MainWindow()
 app.exec_()
